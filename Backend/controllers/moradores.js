@@ -6,9 +6,9 @@ module.exports = app => {
         Moradores.lista(res)
     })
 
-    app.get('/moradores/:id', (req, res) => {
-        const id = parseInt(req.params.id)
-        Moradores.buscaPorId(id, res)
+    app.get('/moradores/:valor', (req, res) => {
+        const valor = req.params.valor
+        Moradores.buscaPorMorador(valor, res)
     })
 
     app.post('/moradores', (req, res) => {

@@ -64,6 +64,21 @@ class Moradores {
         })
     }
 
+    
+    buscaPorMorador(valor, res) {
+
+        const sql = `SELECT * FROM Moradores WHERE id LIKE '${valor}%' or nome LIKE '${valor}%' or email LIKE '${valor}%' or telefone LIKE '${valor}%' or cpf LIKE '${valor}%' ` 
+
+        conexao.query(sql, (erro, resultados) => {
+            if (erro) {
+                res.status(400).json(erro)
+            } else {
+                res.status(200).json(resultados)
+            }
+        })
+
+    }
+
     altera(id, valores, res) {
 
         if (valores.nascimento) {

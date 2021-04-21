@@ -6,14 +6,14 @@ module.exports = app => {
         Apartamentos.lista(res)
     })
 
-    app.get('/apartamentos/:id', (req, res) => {
-        const id = parseInt(req.params.id)
-        Apartamentos.buscaPorId(id, res)
+    app.get('/apartamentos/:valor', (req, res) => {
+        const valor = parseInt(req.params.valor)
+        Apartamentos.buscaPorApartamento(valor, res)
     })
 
     app.post('/apartamentos', (req, res) => {
-      const morador = req.body
-      Apartamentos.adiciona(morador, res)
+      const apartamentos = req.body
+      Apartamentos.adiciona(apartamentos, res)
       
     })
 

@@ -1,5 +1,4 @@
 
-const moment = require('moment')
 const conexao = require('../infra/conexao')
 
 class Apartamentos {
@@ -7,11 +6,11 @@ class Apartamentos {
     adiciona(apartamentos, res) {
 
 
-       const moradoresValido = apartamentos.moradores.length > 0
+        const moradoresValido = apartamentos.moradores.length > 0
 
         const validacoes = [
             {
-                nome: 'Moradores: ' + apartamentos.moradores,
+                nome: 'Moradores',
                 valido: moradoresValido,
                 mensagem: 'É necessário ter ao menos 1 morador por apartamento'
             }
@@ -86,6 +85,21 @@ class Apartamentos {
                 res.status(200).json(`Apartamento Numero: ${id} deletado.`)
             }
         })
+    }
+
+    buscaPorApartamento(valor, res) {
+
+        const sql = `SELECT * FROM Apartamentos WHERE id LIKE '${valor}%' or numero LIKE '${valor}%' or bloco LIKE '${valor}%' or moradores LIKE '${valor}%'` 
+
+        conexao.query(sql, (erro, resultados) => {
+            const morador = resultados[0]
+            if (erro) {
+                res.status(400).json(erro)
+            } else {
+                res.status(200).json(morador)
+            }
+        })
+
     }
 }
 
