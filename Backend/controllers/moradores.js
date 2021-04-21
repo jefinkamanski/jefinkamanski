@@ -1,4 +1,3 @@
-const Atendimento = require('../models/morador')
 const Moradores = require('../models/morador')
 
 module.exports = app => {

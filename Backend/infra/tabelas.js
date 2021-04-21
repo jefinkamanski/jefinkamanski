@@ -4,6 +4,7 @@ class Tabelas {
         console.log('Tabelas foram chamadas')
 
         this.criarMoradores()
+        this.CriarApartamentos()
     }
 
     criarMoradores() {
@@ -19,6 +20,17 @@ class Tabelas {
         })
     }
 
+    CriarApartamentos(){
+        const sql = 'CREATE TABLE IF NOT EXISTS Apartamentos (id int NOT NULL AUTO_INCREMENT, numero int NOT NULL, bloco varchar(15) NOT NULL, moradores varchar(50), PRIMARY KEY(id))'
+
+        this.conexao.query(sql, (erro) => {
+            if(erro) {
+                console.log(erro)
+            } else {
+                console.log("Tabalea Apartamentos Criada")
+            }
+        })
+    }
 }
 
 module.exports = new Tabelas
