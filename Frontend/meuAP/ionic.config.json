@@ -1,0 +1,7 @@
+{
+  "name": "meuAP",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react"
+}
