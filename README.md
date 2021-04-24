@@ -1,4 +1,3 @@
-# jefinkamanski
 Projeto Porter Group
 
 # BackEnd
