@@ -5,6 +5,7 @@
   right: 0;
   top: 50%;
   transform: translateY(-50%);
+  margin-top: 1em;
 }
 
 .container strong {
@@ -22,3 +23,8 @@
 .container a {
   text-decoration: none;
 }
+
+/* .img{
+  width: 2em;
+  height: 2em;
+} */
