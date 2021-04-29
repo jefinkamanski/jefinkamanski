@@ -1,10 +1,10 @@
-import api from "../service/conexao-api"
-import avatar from '../img/business.png';
-import '../Global.css';
-import { IonAvatar, IonButtons, IonCard, IonCol, IonContent, IonFab, IonHeader, IonIcon, IonItem, IonLabel, IonMenuButton, IonPage, IonRow, IonTitle, IonToolbar, IonFabButton } from '@ionic/react';
-import { add } from 'ionicons/icons';
 import React, { useState, useEffect } from 'react';
-
+import { IonAvatar, IonButtons, IonCard, IonCol, IonContent, IonFab, IonHeader, IonIcon, IonItem, IonLabel, IonMenuButton, IonPage, IonRow, IonTitle, IonToolbar, IonFabButton } from '@ionic/react';
+import api from "../service/conexao-api";
+import CadastrarAP from './CadastrarAP'
+import avatar from '../img/business.png';
+import { add } from 'ionicons/icons';
+import '../Global.css';
 
 const Apartamentos: React.FC = () => {
 
@@ -22,6 +22,7 @@ const Apartamentos: React.FC = () => {
 
   const cadastrar = () => {
     console.log('this is:', this);
+
   }
   
 
@@ -73,7 +74,7 @@ const Apartamentos: React.FC = () => {
         </IonItem>
         
         <IonFab vertical="bottom" horizontal="end" slot="fixed">
-        <IonFabButton onClick={cadastrar} color="primary">
+        <IonFabButton  routerLink="/cadastrarAP" color="primary">
             <IonIcon icon={add} />
           </IonFabButton>
         </IonFab>

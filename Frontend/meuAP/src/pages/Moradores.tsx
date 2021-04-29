@@ -5,6 +5,7 @@ import { IonButtons, IonCard, IonContent, IonHeader, IonItem, IonList, IonLabel,
 import React, { useState, useEffect } from 'react';
 
 
+
 const Moradores: React.FC = () => {
 
   const [morador, setData] = useState([]);

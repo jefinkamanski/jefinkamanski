@@ -3,6 +3,8 @@ import { IonReactRouter } from '@ionic/react-router';
 import { Redirect, Route } from 'react-router-dom';
 import Menu from './components/Menu';
 import Moradores from './pages/Moradores';
+import Apartamentos from './pages/Apartamentos';
+import CadastrarAP from './pages/CadastrarAP';
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -20,7 +22,8 @@ import '@ionic/react/css/text-transformation.css';
 import '@ionic/react/css/flex-utils.css';
 import '@ionic/react/css/display.css';
 import './theme/variables.css';
-import Apartamentos from './pages/Apartamentos';
+import React from 'react';
+
 
 const App: React.FC = () => {
   return (
@@ -37,6 +40,9 @@ const App: React.FC = () => {
             </Route>
             <Route path="/apartamentos" exact={true}>
               <Apartamentos />
+            </Route>
+            <Route path="/CadastrarAP" exact={true}>
+              <CadastrarAP />
             </Route>
           </IonRouterOutlet>
         </IonSplitPane>
